@@ -1,0 +1,12 @@
+{% extends "BaseTempl.html" %}
+
+{% block content %}
+  <h2>Add New Category</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Renders form fields -->
+    <button type="submit">Add Category</button>
+  </form>
+  <a href="{% url 'index' %}">Back to Home</a>
+  <p> this is a test</p>
+{% endblock %}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>index</title>
+</head>
+<body>
+    <h1>Categories</h1>
+    <ul>
+        {% for category in categories %}
+            <li><a href="/blog/category/{{category.id}}" >{{ category }}</a></li>  <!-- Use "title" instead of "name" -->
+        {% empty %}
+            <li>No categories found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

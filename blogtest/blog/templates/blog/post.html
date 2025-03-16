@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>post</title>
+</head>
+<body>
+    <h1>{{post}}</h1>
+
+    <p>
+        {{post.content}}
+    </p>
+
+    <h2> Posts</h2>
+    <ul>
+        {% for post in posts %}
+            <li><a href="/blog/post/{{post.id}}" >{{ post }}</a></li>  <!-- Use "title" instead of "name" -->
+        {% empty %}
+            <li>No post found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

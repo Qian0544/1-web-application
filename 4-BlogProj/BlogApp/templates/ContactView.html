@@ -1,0 +1,14 @@
+{% extends "BaseTempl.html" %}
+
+{% block title %}
+Contact
+{% endblock title %}
+
+
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+    {{ contactform }}
+    <button type="sumbit">Submit</button>
+</form>
+{% endblock body %}

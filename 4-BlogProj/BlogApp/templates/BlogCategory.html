@@ -1,0 +1,30 @@
+{% extends "BaseTempl.html" %}
+
+{% block title %}
+{{cat.title}}
+{% endblock title %}
+
+{% block body %}
+<h1>{{cat.title}}</h1>
+<!--<p>{{cat.description}}</p>-->
+<table border="2" style="width: 100%;">
+    <tr>
+        <td>{{cat.description}}</td>
+    </tr>
+</table>
+
+{% if catpost.first %}
+<p>Related posts:</p>
+<ul>
+    {% for i in catpost %}
+    <li>
+        <a href="/blog/post/{{i.id}}">{{i}}</a>
+        <a href="{% url 'blog_post' i.id %}">{{i}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No posts published with this category!</p>
+{% endif %}
+
+{% endblock body %}

@@ -1,0 +1,33 @@
+{% extends "BaseTempl.html" %}
+
+{% block title %}
+A Wonderful Blog
+{% endblock title %}
+
+{% block body %}
+
+<h1>Welcome to The Wonderful Blog</h1>
+
+{% if posts %}
+<p>Last ten posts:</p>
+<ul>
+    {% for i in posts %}
+    <li>
+        <a href="post/{{i.id}}">{{i}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No posts here yet, so go and write one %)</p>
+{% endif %}
+
+<p>Please select a category:</p>
+<ul>
+    {% for i in blogcat %}
+    <li>
+        <a href="category/{{i.id}}">{{i}}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock body %}

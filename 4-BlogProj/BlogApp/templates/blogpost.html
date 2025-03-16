@@ -1,0 +1,25 @@
+{% extends "BaseTempl.html" %}
+
+{% block title %}
+{{post.title}}
+{% endblock title %}
+
+{% block body %}
+<h1>{{post.title}}</h1>
+<p><em>{{post.author}}</em></p>
+<p>Status: {{post.status}}</p>
+<p>Date: {{post.published}}</p>
+
+<p>Tags:</p>
+<ul>
+{% for i in postcategories %}
+<li>{{i}}</li>
+{% endfor %}
+</ul>
+
+<table border="2" style="width: 100%;">
+    <tr>
+        <td>{{post.content}}</td>
+    </tr>
+</table>
+{% endblock body %}
